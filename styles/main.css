@@ -1,0 +1,539 @@
+/* color palette + spacing stuff I'm reusing everywhere */
+:root {
+    --bg: #f5f3ef;
+    --fg: #1b1f2a;
+    --muted: #6a6f7d;
+    --accent: #c8655d;
+    --accent-dark: #a1423a;
+    --card: #ffffff;
+    --border: rgba(27, 31, 42, 0.15);
+    --shadow: 0 18px 45px rgba(15, 18, 28, 0.08);
+    font-size: 16px;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* reset so padding/borders behave */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* default text setup */
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    line-height: 1.65;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.75rem;
+}
+
+a {
+    color: inherit;
+}
+
+main {
+    padding-inline: clamp(1.5rem, 5vw, 4.25rem);
+}
+
+/* ---------- header + nav ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem clamp(1.5rem, 5vw, 4.25rem);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(6px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-mark {
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: var(--fg);
+    color: var(--bg);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+.logo-name {
+    display: block;
+    font-weight: 600;
+}
+
+.logo-role {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.main-nav {
+    position: relative;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.3rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav .is-active {
+    border-color: var(--accent);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.nav-toggle-bar {
+    width: 22px;
+    height: 2px;
+    background: var(--fg);
+    margin-block: 4px;
+}
+
+/* ---------- hero ---------- */
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: #555a69;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+    padding-block: clamp(3rem, 10vw, 5rem);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0 1rem;
+}
+
+.hero-meta {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.meta-label {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero-figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-dark);
+}
+
+.btn-ghost {
+    border-color: var(--fg);
+    color: var(--fg);
+}
+
+/* ---------- shared section styles ---------- */
+.section {
+    padding-block: clamp(2.75rem, 8vw, 4.2rem);
+}
+
+.section-header {
+    max-width: 650px;
+    margin-bottom: 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.75rem;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 1.35rem;
+    border: 1px solid var(--border);
+    padding: 1.85rem;
+    box-shadow: var(--shadow);
+}
+
+.card-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+}
+
+/* ---------- process list ---------- */
+.process {
+    background: #fff;
+    border-radius: 1.8rem;
+    padding: clamp(1.8rem, 4vw, 3rem);
+    box-shadow: var(--shadow);
+}
+
+.process-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.process-list li {
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+    padding: 1.25rem;
+    background: #fffefb;
+}
+
+/* ---------- testimonials / quote grid ---------- */
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+blockquote {
+    margin: 0 0 1rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+}
+
+/* ---------- CTA stripe ---------- */
+.cta-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(2rem, 5vw, 3rem);
+    background: var(--fg);
+    color: var(--bg);
+    border-radius: 1.8rem;
+}
+
+.cta-panel .btn {
+    align-self: flex-start;
+    background: #fff;
+    color: var(--fg);
+}
+
+/* ---------- artwork sub navigation ---------- */
+.sub-nav {
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    margin: 1rem auto 2.5rem;
+    max-width: 960px;
+    box-shadow: var(--shadow);
+}
+
+.sub-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+/* ---------- artwork cards ---------- */
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
+.art-card {
+    border-radius: 1.25rem;
+    border: 1px solid var(--border);
+    background: #fff;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.art-card div {
+    padding: 1.5rem;
+}
+
+.tags {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tags li {
+    padding: 0.35rem 0.85rem;
+    background: rgba(27, 31, 42, 0.08);
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+
+/* ---------- about page stuff ---------- */
+.about-intro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* ---------- capabilities + contact ---------- */
+.capabilities-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-panel {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    border: 1px solid var(--border);
+    border-radius: 0.65rem;
+    padding: 0.75rem 1rem;
+    font: inherit;
+}
+
+.contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-list li + li {
+    margin-top: 0.9rem;
+}
+
+.contact-list .label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* ---------- timeline + logos ---------- */
+.timeline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.timeline-year {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    background: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ---------- services banner ---------- */
+.services-note {
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #fffdfa;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.services-note .btn {
+    margin-left: auto;
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* visually hidden helper for accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ---------- responsive tweaks ---------- */
+@media (max-width: 780px) {
+    .site-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav ul {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 0.85rem;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .main-nav .is-open {
+        display: flex;
+    }
+
+    .services-note {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .services-note .btn {
+        margin-left: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

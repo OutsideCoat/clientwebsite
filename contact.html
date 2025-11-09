@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Placeholder contact page for future inquiries.">
+    <title>Contact | Maya Hutagalung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <!-- Accumulus validator (no type attribute) -->
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body data-page="contact">
+    <!-- global header (same one used everywhere) -->
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            <span class="logo-mark">MH</span>
+            <span>
+                <span class="logo-name">Maya Hutagalung</span>
+                <span class="logo-role">Illustration Portfolio</span>
+            </span>
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul id="primary-menu">
+                <li><a href="index.html" data-page="home">Home</a></li>
+                <li><a href="about.html" data-page="about">About</a></li>
+                <li><a href="publications.html" data-page="publications">Publications &amp; Clients</a></li>
+                <li><a href="artwork.html" data-page="artwork">Artwork</a></li>
+                <li><a href="contact.html" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Intro text so users know why they're here -->
+        <section class="section hero-slim">
+            <p class="eyebrow">Contact</p>
+            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+            <p>Please use the placeholder form below to share lorem ipsum project notes. Actual contact details will be added later.</p>
+        </section>
+
+        <!-- two-column layout: form on the left, studio info on the right -->
+        <section class="section contact-grid">
+            <div class="contact-panel">
+                <h2>Send a placeholder message</h2>
+                <form class="contact-form" action="#" method="post">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Lorem Ipsum" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="lorem@example.com" required>
+
+                    <label for="organization">Organization</label>
+                    <input id="organization" name="organization" type="text" placeholder="Dolor Studio">
+
+                    <label for="services">What do you need?</label>
+                    <select id="services" name="services">
+                        <option>Placeholder request</option>
+                        <option>Placeholder workshop</option>
+                        <option>Placeholder interview</option>
+                    </select>
+
+                    <label for="timeline">Timeline</label>
+                    <input id="timeline" name="timeline" type="text" placeholder="Spring 2026">
+
+                    <label for="message">Project details</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Lorem ipsum dolor sit amet..." required></textarea>
+
+                    <button class="btn btn-primary" type="submit">Submit placeholder</button>
+                </form>
+            </div>
+            <div class="contact-details">
+                <h2>Placeholder studio info</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <ul class="contact-list">
+                    <li>
+                        <span class="label">Email</span>
+                        <p>hello@placeholder.com</p>
+                    </li>
+                    <li>
+                        <span class="label">Phone</span>
+                        <p>(000) 000-0000</p>
+                    </li>
+                    <li>
+                        <span class="label">Social</span>
+                        <p>@placeholder on all platforms</p>
+                    </li>
+                    <li>
+                        <span class="label">Newsletter</span>
+                        <p>Sign up link coming soon.</p>
+                    </li>
+                </ul>
+                <div class="availability">
+                    <h3>Availability</h3>
+                    <ul>
+                        <li>Lorem lorem — booking soon</li>
+                        <li>Ipsum ipsum — open slots</li>
+                        <li>Dolor dolor — waitlist</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Maya Hutagalung. All rights reserved.</p>
+        <p>Portfolio concept for educational assignment.</p>
+    </footer>
+</body>
+</html>

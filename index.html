@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Placeholder landing page for Maya Hutagalung.">
+    <title>Home | Maya Hutagalung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <!-- Accumulus validator (no type attribute) -->
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body data-page="home">
+    <!-- Sticky header so nav stays accessible no matter where you are -->
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            <span class="logo-mark">MH</span>
+            <span>
+                <span class="logo-name">Maya Hutagalung</span>
+                <span class="logo-role">Illustration Portfolio</span>
+            </span>
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+            <!-- Hamburger button only shows on small screens -->
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul id="primary-menu">
+                <!-- data-page hooks up with JS to highlight current page -->
+                <li><a href="index.html" data-page="home">Home</a></li>
+                <li><a href="about.html" data-page="about">About</a></li>
+                <li><a href="publications.html" data-page="publications">Publications &amp; Clients</a></li>
+                <li><a href="artwork.html" data-page="artwork">Artwork</a></li>
+                <li><a href="contact.html" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero = first impression + CTA buttons -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Lorem ipsum</p>
+                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="artwork.html">View Artwork</a>
+                    <a class="btn btn-ghost" href="contact.html">Get in Touch</a>
+                </div>
+                <ul class="hero-meta">
+                    <li>
+                        <span class="meta-label">Lorem</span>
+                        <span class="meta-value">Ipsum - Dolor - Sit - Amet</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">Consectetur</span>
+                        <span class="meta-value">Adipiscing - Elit</span>
+                    </li>
+                </ul>
+            </div>
+            <figure class="hero-figure">
+                <img src="https://via.placeholder.com/900x640?text=Landing+Image" alt="Placeholder illustration" loading="lazy">
+                <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Feature cards introducing the work buckets -->
+        <section class="section highlight">
+            <div class="section-header">
+                <p class="eyebrow">Lorem ipsum</p>
+                <h2>Dolor sit amet consectetur</h2>
+                <p>Integer quis auctor elit sed vulputate mi. Bibendum neque egestas congue quisque egestas diam.</p>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <p class="card-label">Lorem</p>
+                    <h3>Dolor sit amet</h3>
+                    <p>Aliquam erat volutpat. Donec et odio pellentesque diam volutpat commodo sed.</p>
+                    <ul>
+                        <li>Nullam vehicula</li>
+                        <li>Faucibus pulvinar</li>
+                        <li>Fames ac turpis</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <p class="card-label">Ipsum</p>
+                    <h3>Consectetur elit</h3>
+                    <p>Rhoncus mattis urna neque viverra justo nec ultrices. Euismod nisi porta lorem mollis.</p>
+                    <ul>
+                        <li>Viverra aliquet</li>
+                        <li>Tristique nulla</li>
+                        <li>Feugiat fermentum</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <p class="card-label">Dolor</p>
+                    <h3>Sit amet lorem</h3>
+                    <p>Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales.</p>
+                    <ul>
+                        <li>Quam vulputate</li>
+                        <li>Tellus molestie</li>
+                        <li>At in tellus</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Process timeline so clients know what to expect -->
+        <section class="section process">
+            <div class="process-intro">
+                <p class="eyebrow">Process</p>
+                <h2>Dolor sit amet consectetur adipiscing elit</h2>
+                <p>Nibh ipsum consequat nisl vel pretium lectus quam id leo. Sit amet facilisis magna etiam tempor orci.</p>
+            </div>
+            <ol class="process-list">
+                <li>
+                    <h3>01 - Lorem ipsum</h3>
+                    <p>Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra.</p>
+                </li>
+                <li>
+                    <h3>02 - Dolor sit</h3>
+                    <p>Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla.</p>
+                </li>
+                <li>
+                    <h3>03 - Amet consectetur</h3>
+                    <p>Metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel.</p>
+                </li>
+                <li>
+                    <h3>04 - Adipiscing elit</h3>
+                    <p>Enim eu turpis egestas pretium aenean pharetra magna ac placerat.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Social proof block (fake quotes for now) -->
+        <section class="section testimonials">
+            <div class="section-header">
+                <p class="eyebrow">Testimonials</p>
+                <h2>Lorem ipsum dolor sit amet</h2>
+            </div>
+            <div class="quote-grid">
+                <figure>
+                    <blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."</blockquote>
+                    <figcaption>- Lorem Ipsum</figcaption>
+                </figure>
+                <figure>
+                    <blockquote>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."</blockquote>
+                    <figcaption>- Dolor Sit</figcaption>
+                </figure>
+                <figure>
+                    <blockquote>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."</blockquote>
+                    <figcaption>- Amet Consectetur</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Final push to contact form -->
+        <section class="section cta-panel">
+            <div>
+                <p class="eyebrow">Lorem ipsum</p>
+                <h2>Sed ut perspiciatis unde omnis iste natus.</h2>
+                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+            </div>
+            <a class="btn btn-primary" href="contact.html">Start a project</a>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <!-- JS drops the current year here -->
+        <p>&copy; <span id="year"></span> Maya Hutagalung. All rights reserved.</p>
+        <p>Portfolio concept for educational assignment.</p>
+    </footer>
+</body>
+</html>
