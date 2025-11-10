@@ -20,6 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggle?.addEventListener("click", () => {
         const isOpen = menu?.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", String(!!isOpen));
+        const expanded = Boolean(isOpen);
+        toggle.setAttribute("aria-expanded", String(expanded));
+        document.body.classList.toggle("nav-open", expanded);
+    });
+
+    menu?.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (menu.classList.contains("is-open")) {
+                menu.classList.remove("is-open");
+                toggle?.setAttribute("aria-expanded", "false");
+                document.body.classList.remove("nav-open");
+            }
+        });
     });
 });
