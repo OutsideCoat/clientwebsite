@@ -50,7 +50,10 @@ a {
 }
 
 main {
+    width: min(1200px, 100%);
+    margin: 0 auto;
     padding-inline: clamp(1.5rem, 5vw, 4.25rem);
+    padding-block: clamp(2rem, 4vw, 4rem);
 }
 
 /* ---------- header + nav ---------- */
@@ -174,10 +177,12 @@ body[data-page="home"] .hero-content {
 body[data-page="home"] .hero {
     background: rgba(255, 255, 255, 0.78);
     border-radius: 1.5rem;
-    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
     box-shadow: var(--shadow);
-    max-width: 640px;
-    margin-inline: 0;
+    max-width: min(760px, 100%);
+    width: 100%;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .hero-actions {
