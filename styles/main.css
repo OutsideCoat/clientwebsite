@@ -28,6 +28,16 @@ body {
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+body[data-page="home"] {
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(rgba(245, 243, 239, 0.65), rgba(245, 243, 239, 0.65)),
+        url("../images/index-placeholder.svg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -140,6 +150,21 @@ main {
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: center;
     padding-block: clamp(3rem, 10vw, 5rem);
+}
+
+body[data-page="home"] .hero-content {
+    max-width: 560px;
+    margin: 0;
+    text-align: left;
+}
+
+body[data-page="home"] .hero {
+    background: rgba(255, 255, 255, 0.78);
+    border-radius: 1.5rem;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+    box-shadow: var(--shadow);
+    max-width: 640px;
+    margin-inline: 0;
 }
 
 .hero-actions {
