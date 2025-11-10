@@ -523,6 +523,10 @@ blockquote {
         gap: 1rem;
     }
 
+    main {
+        padding-inline: 1.25rem;
+    }
+
     .nav-toggle {
         display: block;
     }
@@ -552,6 +556,25 @@ blockquote {
 
     .services-note .btn {
         margin-left: 0;
+    }
+
+    body[data-page="home"] {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    body[data-page="home"] .hero {
+        max-width: 100%;
+        padding-inline: 1.25rem;
+    }
+
+    body[data-page="home"] .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
