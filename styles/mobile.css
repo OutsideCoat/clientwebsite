@@ -76,3 +76,40 @@ body[data-page="home"] .hero-content {
     flex-direction: column;
     align-items: stretch;
 }
+
+.sub-nav {
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    max-width: 100%;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.sub-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.sub-nav li {
+    margin: 0;
+    list-style: none;
+}
+
+.sub-nav li + li {
+    margin-top: 1.25rem;
+}
+
+.sub-nav a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 1.05rem;
+    padding: 1.15rem 1.4rem;
+    background: #fff;
+    border: 1px solid rgba(27, 31, 42, 0.25);
+    box-shadow: 0 28px 45px rgba(0, 0, 0, 0.12);
+    border-radius: 1.75rem;
+}
