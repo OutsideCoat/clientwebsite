@@ -97,7 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!itemFigure) {
                 return;
             }
-            const matches = filterValue === "all" || item.dataset.category === filterValue;
+            const categories =
+                item.dataset.category
+                    ?.split(/\s+/)
+                    .map(value => value.trim())
+                    .filter(Boolean) ?? [];
+            const matches = filterValue === "all" || categories.includes(filterValue);
             itemFigure.classList.toggle("hidden", !matches);
         });
         updateSectionVisibility();
