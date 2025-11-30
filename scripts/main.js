@@ -78,8 +78,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const applyImagePerformanceHints = () => {
+        if (!galleryItems.length) {
+            return;
+        }
+        galleryItems.forEach((img, index) => {
+            if (!img.hasAttribute("loading")) {
+                img.setAttribute("loading", "lazy");
+            }
+            if (!img.hasAttribute("decoding")) {
+                img.setAttribute("decoding", "async");
+            }
+            if (index < 3 && !img.hasAttribute("fetchpriority")) {
+                img.setAttribute("fetchpriority", "high");
+            }
+        });
+    };
+
     // If a data-image-host (e.g. S3 bucket) is provided on <body>, load gallery images from there.
     applyExternalImageHost();
+    // Hint the browser to lazy-load offscreen images and decode asynchronously to speed up page load.
+    applyImagePerformanceHints();
 
     const closeSection = section => {
         const panel = section.querySelector(".section-content");

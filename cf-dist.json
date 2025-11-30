@@ -1,0 +1,97 @@
+{
+    "Origins":  {
+                    "Quantity":  1,
+                    "Items":  [
+                                  {
+                                      "CustomOriginConfig":  {
+                                                                 "HTTPSPort":  443,
+                                                                 "OriginSslProtocols":  {
+                                                                                            "Quantity":  3,
+                                                                                            "Items":  [
+                                                                                                          "TLSv1",
+                                                                                                          "TLSv1.1",
+                                                                                                          "TLSv1.2"
+                                                                                                      ]
+                                                                                        },
+                                                                 "HTTPPort":  80,
+                                                                 "OriginProtocolPolicy":  "https-only"
+                                                             },
+                                      "Id":  "s3-origin",
+                                      "DomainName":  "my-portfolio-images-maya.s3.amazonaws.com"
+                                  }
+                              ]
+                },
+    "DefaultRootObject":  "",
+    "Logging":  {
+                    "Prefix":  "",
+                    "IncludeCookies":  false,
+                    "Bucket":  "",
+                    "Enabled":  false
+                },
+    "DefaultCacheBehavior":  {
+                                 "ForwardedValues":  {
+                                                         "Cookies":  {
+                                                                         "Forward":  "none"
+                                                                     },
+                                                         "QueryString":  false,
+                                                         "Headers":  {
+                                                                         "Quantity":  0
+                                                                     },
+                                                         "QueryStringCacheKeys":  {
+                                                                                      "Quantity":  0
+                                                                                  }
+                                                     },
+                                 "MaxTTL":  31536000,
+                                 "MinTTL":  0,
+                                 "TargetOriginId":  "s3-origin",
+                                 "DefaultTTL":  86400,
+                                 "TrustedKeyGroups":  {
+                                                          "Quantity":  0,
+                                                          "Enabled":  false
+                                                      },
+                                 "TrustedSigners":  {
+                                                        "Quantity":  0,
+                                                        "Enabled":  false
+                                                    },
+                                 "Compress":  true,
+                                 "AllowedMethods":  {
+                                                        "Quantity":  2,
+                                                        "Items":  [
+                                                                      "GET",
+                                                                      "HEAD"
+                                                                  ],
+                                                        "CachedMethods":  {
+                                                                              "Quantity":  2,
+                                                                              "Items":  [
+                                                                                            "GET",
+                                                                                            "HEAD"
+                                                                                        ]
+                                                                          }
+                                                    },
+                                 "ViewerProtocolPolicy":  "redirect-to-https"
+                             },
+    "CallerReference":  "clientwebsite-20251129182947717",
+    "CacheBehaviors":  {
+                           "Quantity":  0
+                       },
+    "Comment":  "Images for artwork site",
+    "IsIPV6Enabled":  true,
+    "ViewerCertificate":  {
+                              "CloudFrontDefaultCertificate":  true
+                          },
+    "CustomErrorResponses":  {
+                                 "Quantity":  0
+                             },
+    "Aliases":  {
+                    "Quantity":  0
+                },
+    "Enabled":  true,
+    "HttpVersion":  "http2",
+    "Restrictions":  {
+                         "GeoRestriction":  {
+                                                "Quantity":  0,
+                                                "RestrictionType":  "none"
+                                            }
+                     },
+    "PriceClass":  "PriceClass_All"
+}
