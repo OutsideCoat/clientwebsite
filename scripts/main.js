@@ -44,9 +44,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxCaption = lightbox?.querySelector(".gallery-lightbox__caption");
     const lightboxPrev = lightbox?.querySelector("[data-lightbox-prev]");
     const lightboxNext = lightbox?.querySelector("[data-lightbox-next]");
+    const imageHostBase = document.body?.dataset?.imageHost?.trim();
 
     let lightboxItems = [];
     let lightboxIndex = -1;
+
+    const isAbsoluteUrl = value => /^https?:\/\//i.test(value) || value?.startsWith("//");
+
+    const prefixWithImageHost = path => {
+        if (!imageHostBase || !path || isAbsoluteUrl(path)) {
+            return path;
+        }
+        const base = imageHostBase.endsWith("/") ? imageHostBase : `${imageHostBase}/`;
+        const cleanedPath = path.replace(/^\.?\//, "");
+        return `${base}${cleanedPath}`;
+    };
+
+    const applyExternalImageHost = () => {
+        if (!imageHostBase) {
+            return;
+        }
+        galleryItems.forEach(img => {
+            const full = img.dataset.full || img.getAttribute("src");
+            const thumb = img.getAttribute("src");
+            const hostedFull = prefixWithImageHost(full);
+            const hostedThumb = prefixWithImageHost(thumb);
+            if (hostedFull) {
+                img.dataset.full = hostedFull;
+            }
+            if (hostedThumb) {
+                img.src = hostedThumb;
+            }
+        });
+    };
+
+    // If a data-image-host (e.g. S3 bucket) is provided on <body>, load gallery images from there.
+    applyExternalImageHost();
 
     const closeSection = section => {
         const panel = section.querySelector(".section-content");
